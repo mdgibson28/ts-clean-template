@@ -1,9 +1,21 @@
+interface IConstructor {
+    new(...args: any[]);
+}
+
 /**
- * The base entity class. All Entity classes should extend this class.
- * The EntityFactory decorator uses this class to hydrate the entity with data
+ * Decorator for all entity classes. Sets up dependencies, hydrates data, and makes object immutable
+ * @param dependencies
+ * @param mapper
+ * @constructor
  */
-export class Entity<T> {
-    constructor(data?:Partial<T>) {
-        Object.assign(this, data);
+export function Entity<T>(dependencies:{[key:string]:any}, mapper:(dependencies:{[key:string]:any}, entity:T) => T) {
+    return function factory<T extends IConstructor>(entityConstructor:T) {
+        return class extends entityConstructor {
+            constructor(...args:any[]) {
+                const me:any = super(...args);
+                mapper(dependencies, me);
+                Object.freeze(me);
+            }
+        };
     }
 }

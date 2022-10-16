@@ -1,7 +1,7 @@
+import {BaseEntity} from './BaseEntity';
 import {Entity} from './Entity';
-import {EntityFactory} from './EntityFactory';
 
-@EntityFactory<TestEntity>(
+@Entity<TestEntity>(
     {
         idMaker: {
             makeId: () => {
@@ -14,7 +14,7 @@ import {EntityFactory} from './EntityFactory';
         return entity;
     }
 )
-export class TestEntity extends Entity<TestEntity> {
+class TestEntity extends BaseEntity<TestEntity> {
     public name:string;
     public id:string;
 }

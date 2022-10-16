@@ -1,5 +1,5 @@
-import {EntityFactory} from './EntityFactory';
 import {Entity} from './Entity';
+import {EntityFactory} from './EntityFactory';
 
 @EntityFactory<TestEntity>(
     {
@@ -18,3 +18,16 @@ export class TestEntity extends Entity<TestEntity> {
     public name:string;
     public id:string;
 }
+
+describe('Entity', () => {
+
+    it('builds a new frozen entity', () => {
+        const entity:TestEntity = new TestEntity({
+            name: 'Hello, world!',
+            id: 'abc'
+        });
+
+        expect(entity.name).toEqual('Hello, world!');
+        expect(entity.id).toEqual('123');
+    });
+});

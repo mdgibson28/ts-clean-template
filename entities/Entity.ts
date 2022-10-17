@@ -14,7 +14,7 @@ export function Entity<T>(dependencies:{[key:string]:any}, mapper:(dependencies:
             constructor(...args:any[]) {
                 const me:any = super(...args);
                 mapper(dependencies, me);
-                Object.freeze(me);
+                Object.seal(me);
             }
         };
     }

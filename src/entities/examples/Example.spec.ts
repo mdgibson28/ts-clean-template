@@ -15,8 +15,4 @@ describe('Example', () => {
         expect(entity.name).toEqual('Hello, world!');
         expect(entity.id).toEqual('123');               // set by dependency
     });
-
-    it('should be sealed', () => {
-        expect(Object.isSealed(entity)).toBe(true);
-    });
 });

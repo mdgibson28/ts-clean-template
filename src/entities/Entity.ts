@@ -18,15 +18,16 @@ class TestEntity extends BaseEntity<TestEntity> {
 }
  */
 
-import {IEntityFactory} from './IEntityFactory';
+import {Constructor} from '../types/Constructor';
+import {EntityFactory} from './EntityFactory';
 
 /**
  * Decorator for all entity classes. Sets up dependencies, hydrates data, and makes object sealed
  * @param factory
  * @constructor
  */
-export function Entity<T>(factory?:IEntityFactory<T>) {
-    return function EntityFactory<T extends IConstructor>(entityConstructor:T) {
+export function Entity<T>(factory?:EntityFactory<T>) {
+    return function entityFactory<T extends Constructor>(entityConstructor:T) {
         return class extends entityConstructor {
             constructor(...args:any[]) {
                 const me:any = super(...args);
@@ -39,8 +40,4 @@ export function Entity<T>(factory?:IEntityFactory<T>) {
             }
         };
     }
-}
-
-interface IConstructor {
-    new(...args: any[]);
 }

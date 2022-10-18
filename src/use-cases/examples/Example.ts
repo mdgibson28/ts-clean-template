@@ -1,6 +1,11 @@
 import {UseCase} from '../UseCase';
 import {BaseUseCase} from '../BaseUseCase';
-import {ExampleDependencies, ExampleFactory} from './ExampleFactory';
+import {ExampleFactory} from './ExampleFactory';
+import {UseCaseFactory} from '../UseCaseFactory';
+
+export interface ExampleDependencies extends UseCaseFactory {
+    start:() => string;
+}
 
 @UseCase(new ExampleFactory())
 export class Example extends BaseUseCase {

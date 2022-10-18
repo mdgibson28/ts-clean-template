@@ -1,8 +1,6 @@
 import {UseCaseFactory} from '../UseCaseFactory';
+import {ExampleDependencies} from './Example';
 
-export interface ExampleDependencies extends UseCaseFactory {
-    start:() => string;
-}
 export class ExampleFactory implements UseCaseFactory {
     dependencies:ExampleDependencies = {
         start: ():string => {

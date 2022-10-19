@@ -1,20 +1,16 @@
 import {UseCase} from '../UseCase';
-import {BaseUseCase} from '../BaseUseCase';
-import {ExampleFactory} from './ExampleFactory';
-import {UseCaseFactory} from '../UseCaseFactory';
+import {ExampleDependencies} from './ExampleDependencies';
+import {Dependency} from '../../foundation/decorators/Dependency';
+import {Factory} from '../../foundation/decorators/Factory';
 
-export interface ExampleDependencies extends UseCaseFactory {
-    start:() => string;
-}
+@Factory<Example>(ExampleDependencies)
+export class Example extends UseCase<Example> {
 
-@UseCase(new ExampleFactory())
-export class Example extends BaseUseCase {
-
-    protected dependencies:ExampleDependencies;
+    @Dependency processor: {start:() => string;};
     protected endResult:string = 'pending';
 
     public achieveEndResult():void {
-        this.endResult = this.dependencies.start();
+        this.endResult = this.processor.start();
     }
 
     public getEndResult():string {

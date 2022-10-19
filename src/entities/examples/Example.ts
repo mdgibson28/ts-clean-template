@@ -1,9 +1,9 @@
 import {ExampleDependencies} from './ExampleDependencies';
-import {Dependency} from '../../decorators/Dependency';
-import {Factory} from '../../decorators/Factory';
+import {Dependency} from '../../foundation/decorators/Dependency';
+import {Factory} from '../../foundation/decorators/Factory';
 import {Entity} from '../Entity';
 
-@Factory(ExampleDependencies)
+@Factory<Example>(ExampleDependencies)
 export class Example extends Entity<Example> {
     @Dependency idMaker: {makeId: () => string};
 

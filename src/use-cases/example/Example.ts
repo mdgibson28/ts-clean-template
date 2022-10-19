@@ -1,5 +1,5 @@
 import {UseCase} from '../UseCase';
-import {ExampleDependencies} from './ExampleDependencies';
+import {dependencies} from './dependencies';
 import {Dependency} from '../../foundation/decorators/Dependency';
 import {Factory} from '../../foundation/decorators/Factory';
 import {DependencySet} from '../../foundation/types/DependencySet';
@@ -10,7 +10,7 @@ export interface IExampleDependencies extends DependencySet {
     }
 }
 
-@Factory<IExampleDependencies>(ExampleDependencies)
+@Factory<IExampleDependencies>(dependencies)
 export class Example extends UseCase<Example> {
 
     @Dependency processor: {start:() => string;};

@@ -1,4 +1,4 @@
-import {ExampleDependencies} from './ExampleDependencies';
+import {dependencies} from './dependencies';
 import {Dependency} from '../../foundation/decorators/Dependency';
 import {Factory} from '../../foundation/decorators/Factory';
 import {Entity} from '../Entity';
@@ -8,7 +8,7 @@ export interface IExampleDependencies extends DependencySet {
     idMaker: {makeId: () => string;};
 }
 
-@Factory<IExampleDependencies>(ExampleDependencies)
+@Factory<IExampleDependencies>(dependencies)
 export class Example extends Entity<Example> {
     @Dependency idMaker: {makeId: () => string};
 

@@ -1,6 +1,6 @@
 import {IExampleDependencies} from './Example';
 
-export const ExampleDependencies:IExampleDependencies = {
+export const dependencies:IExampleDependencies = {
     idMaker: {
         makeId: ():string => {
             return '123';

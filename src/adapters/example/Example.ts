@@ -1,4 +1,4 @@
-import {ExampleDependencies} from './ExampleDependencies';
+import {dependencies} from './dependencies';
 import {Factory} from '../../foundation/decorators/Factory';
 import {Adapter} from '../Adapter';
 import {Dependency} from '../../foundation/decorators/Dependency';
@@ -9,7 +9,7 @@ export interface IExampleDependencies extends DependencySet {
     outbound: {state: string;};
 }
 
-@Factory<IExampleDependencies>(ExampleDependencies)
+@Factory<IExampleDependencies>(dependencies)
 export class Example extends Adapter<Example> {
 
     @Dependency inbound:{state: string;};

@@ -1,4 +1,4 @@
-import * as Core from '../config/index';
+import {Core} from '../config/index';
 
 /**
  * Bootstrap your application

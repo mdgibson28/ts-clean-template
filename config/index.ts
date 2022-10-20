@@ -20,5 +20,5 @@ import * as UseCases from '../core/use-cases/index';
 import * as Adapters from '../core/adapters/index';
 
 
-export {Entities, UseCases, Adapters};
+export const Core = {Entities, UseCases, Adapters};
 

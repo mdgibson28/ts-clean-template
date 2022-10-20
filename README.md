@@ -33,6 +33,17 @@ to change freely without requiring any changes in the entities and use cases.
 
 ## Commands
 
+### Bundle
+```
+npx webpack
+```
+
+### Run test app
+```
+npx webpack
+node dist/main.js
+```
+
 ### Run unit tests
 ```
 npm run test

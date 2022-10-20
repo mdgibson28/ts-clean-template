@@ -5,22 +5,20 @@
 /**
  * Entities
  */
-import '../core/entities/index';
+import * as Entities from '../core/entities/index';
 
 
 /**
  * Use Cases
  */
-import '../core/use-cases/index';
+import * as UseCases from '../core/use-cases/index';
 
 
 /**
  * Adapters
  */
-import '../core/adapters/index';
+import * as Adapters from '../core/adapters/index';
 
 
-/**
- *
- */
+export {Entities, UseCases, Adapters};
 

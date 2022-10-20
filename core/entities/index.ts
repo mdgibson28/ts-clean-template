@@ -1,1 +1,1 @@
-import './example/Example;'
+export * from './example/Example';

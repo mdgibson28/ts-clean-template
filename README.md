@@ -41,7 +41,7 @@ npx webpack
 ### Run test app
 ```
 npx webpack
-node dist/main.js
+node dist/index.js
 ```
 
 ### Run unit tests

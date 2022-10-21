@@ -9,6 +9,7 @@ const config = {
     entry: './app/index.ts',
     output: {
         path: path.resolve(__dirname, 'dist'),
+        filename: 'index.js',
         clean: true,
     },
     devServer: {

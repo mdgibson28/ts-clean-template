@@ -1,6 +1,6 @@
 
 export function Dependency(target:any, key:string):void {
-    let pKey:string = '_' + key;
+    const pKey:string = '_' + key;
 
     target['::set' + pKey] = function ():Function {
         return function (newVal:any):void {

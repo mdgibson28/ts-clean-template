@@ -1,5 +1,5 @@
 # The Question
-How do you build an application in Typescript that will separate concerns in a way that will enable then interchangeability of a UI framework?
+How do you build an application in Typescript that will separate concerns in a way that will enable then interchangeability of a the main components of a system?
 
 # typescript-clean-framework
 A Typescript framework for building web applications using Clean Architecture principles.
